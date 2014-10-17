@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 """ 
-
+All what concerns User Interface needs an access to the static files.
+    For that a symlink has to be created in folder ``/var/log/dustbusters`` pointing to the development folder::
+    
+        sudo ln -s /opt/venvpy/dustbusters-env/dustbusters/src/dustbusters/server/dustbusters/static
+        
 """
 
 import tornado.httpserver
@@ -63,8 +67,10 @@ class TornadoServer():
     The launch of the server is done through a shell script: 'startwsdustbusters' 
     """
     logger = logging.getLogger('tornado.dustbusters')
+    static_file_path = '/var/log/dustbusters/static/'
     application = tornado.web.Application([
-                                (r"/", MainHandler),                              
+                                (r"/", MainHandler),
+                                (r'.*/static/(.*)', tornado.web.StaticFileHandler, {'path': static_file_path}),                            
                             ])
     http_server = None
     ioloop = tornado.ioloop.IOLoop.instance()
