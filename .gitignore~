@@ -1,0 +1,8 @@
+*.pyc
+*.orig
+.project
+.pydevproject
+.settings/
+/documentation/_build/
+/documentation/Makefile
+/src/wind4kite.egg-info/
