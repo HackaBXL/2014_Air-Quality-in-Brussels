@@ -86,16 +86,31 @@ class DialogHome(Dialog):
                 <div id="map"></div>
             </div>
             <div id="cont-legend"> 
-                        
-            <a href="/" class="linkbtn" target="_self">All</a>
-            <a href="/?polluant=C6H6" class="linkbtn" target="_self">C6H6</a>
-            <a href="/?polluant=CO" class="linkbtn" target="_self">CO</a>
-            <a href="/?polluant=NO2" class="linkbtn" target="_self">NO2</a>
-            <a href="/?polluant=O3" class="linkbtn" target="_self">O3</a>
-            <a href="/?polluant=PM2.5" class="linkbtn" target="_self">PM2.5</a>
-            <a href="/?polluant=PM10" class="linkbtn" target="_self">PM10</a>
-            <a href="/?polluant=SO2" class="linkbtn" target="_self">SO2</a>
-            
+                <div id="polluants">
+                    <a href="/" class="linkbtn" target="_self">All</a>
+                    <a href="/?polluant=C6H6" class="linkbtn" target="_self">C6H6</a>
+                    <a href="/?polluant=CO" class="linkbtn" target="_self">CO</a>
+                    <a href="/?polluant=NO2" class="linkbtn" target="_self">NO2</a>
+                    <a href="/?polluant=O3" class="linkbtn" target="_self">O3</a>
+                    <a href="/?polluant=PM2.5" class="linkbtn" target="_self">PM2.5</a>
+                    <a href="/?polluant=PM10" class="linkbtn" target="_self">PM10</a>
+                    <a href="/?polluant=SO2" class="linkbtn" target="_self">SO2</a>
+                </div>
+                <div id="legend">
+                    <h1>Scale</h1>
+                    <table>
+                        <tr><td align="center" bgcolor="#800000"><font color="#FFFFFF">10</font></td></tr>
+                        <tr><td align="center" bgcolor="#C00000"><font color="#FFFFFF">9</font></td></tr>
+                        <tr><td align="center" bgcolor="#FF0000"><font color="#FFFFFF">8</font></td></tr>
+                        <tr><td align="center" bgcolor="#FF8000"><font color="#000000">7</font></td></tr>
+                        <tr><td align="center" bgcolor="#F8E748"><font color="#000000">6</font></td></tr>
+                        <tr><td align="center" bgcolor="#CCFF33"><font color="#000000">5</font></td></tr>
+                        <tr><td align="center" bgcolor="#00FF00"><font color="#000000">4</font></td></tr>
+                        <tr><td align="center" bgcolor="#00C000"><font color="#000000">3</font></td></tr>
+                        <tr><td align="center" bgcolor="#007EFD"><font color="#FFFFFF">2</font></td></tr>
+                        <tr><td align="center" bgcolor="#0000FF"><font color="#FFFFFF">1</font></td></tr>
+                    </table>
+                </div>
             </div> 
         </div>
         
@@ -119,7 +134,7 @@ class DialogHome(Dialog):
         </script>
         '''
         myfooter = u'''
-        <div id="myfooter"> The Dustbastards </div>
+        <div id="myfooter"> The Dust Bastards </div>
         '''
         t = template.Template(DLG_BODY)
         mybody = t.generate(page_id="homepage", body_header=self.title, body_content=mycontent, body_footer=myfooter)

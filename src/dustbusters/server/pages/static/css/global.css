@@ -2,7 +2,7 @@
 
 #myheader{
 	display:flex;
-	padding:20px;
+	/*padding:20px;*/
 	border-bottom:solid;
 }
 #title{
@@ -13,9 +13,10 @@
 	width:25%;
 }
 #indicator{
-	width: 80px;
-	height: 80px;
+	width: 70px;
+	height: 70px;
 	background-color: #00FF00;
+	margin: 0 auto;
 }
 #cont-cont{
 	display:flex;
@@ -26,13 +27,20 @@
 	text-align:center;
 }
 #map {
-	width: 800px;
-	height: 600px;
+	width: 100%;
+	height: 100%;
 }
 #cont-legend{
 	width:25%;
 	padding: 20px;
 }
+#legend{
+	text-align:center;
+}
+#legend > table{
+	margin: 0 auto;
+}
+
 #myfooter{
 	text-align:center;
 	padding:20px;
@@ -50,5 +58,14 @@ body {
 }
 
 a {
-	color: #0077ff;
+	color: #0000FF;
+	padding: 1px;
+}
+
+a:link, a:visited {
+	text-decoration:none;
+	border-image:none;}
+	
+a:hover {
+	text-decoration:underline;
 }
