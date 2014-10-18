@@ -34,6 +34,9 @@ class HeatMap(object):
                   (50.893809, 4.398908, 250),
                   (50.833451, 4.431915, 30)]
         
+        red_limit = 200
+        yellow_limit = 100
+        green_limit = 0
         red_content = " var redPoints = ["
         yellow_content = " var yellowPoints = ["
         green_content = " var greenPoints = ["
@@ -44,11 +47,11 @@ class HeatMap(object):
 #                 cloud = [(round((point[0] + x/100000.0),6), round((point[1] + x/100000.0),6), point[2]) for x in range(point[2]*density_factor)]
                 cloud = self.spiral(10000, (point[0],point[1]), point[2]*density_factor)
                 for item in cloud:
-                    if point[2] <= 100:
+                    if point[2] <= yellow_limit:
                         green_content += POINT.format(item[0],item[1],point[2]) + ","
-                    elif point[2] > 100 and point[2] <= 200:
+                    elif point[2] > yellow_limit and point[2] <= red_limit:
                         yellow_content += POINT.format(item[0],item[1],point[2]) + ","
-                    elif point[2] > 200:
+                    elif point[2] > red_limit:
                         red_content += POINT.format(item[0],item[1],point[2]) + ","
             
             red_content += "]; "

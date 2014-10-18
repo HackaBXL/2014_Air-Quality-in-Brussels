@@ -53,9 +53,9 @@ a {
 							id : 'examples.map-20v6611k'
 						}).addTo(map);
 		
-		var heat_red = L.heatLayer(redPoints, {'radius':30, 'gradient': {1: 'red'} }).addTo(map);
-		var heat_yellow = L.heatLayer(yellowPoints, {'radius':30, 'gradient': { 1: 'yellow'} }).addTo(map);
-		var heat_green = L.heatLayer(greenPoints, {'radius':30, 'gradient': { 1: 'lime'} }).addTo(map);
+		var heat_red = L.heatLayer(redPoints, {'radius':30, 'gradient': {0.2: 'lime',0.5: 'yellow',1: 'red'} }).addTo(map);
+		var heat_yellow = L.heatLayer(yellowPoints, {'radius':30, 'gradient': { 0.2: 'blue',0.5: 'lime',1: 'yellow'} }).addTo(map);
+		var heat_green = L.heatLayer(greenPoints, {'radius':30, 'gradient': { 0.2: 'black',0.5: 'blue',1: 'lime'} }).addTo(map);
 	</script>
 </body>
 </html>
