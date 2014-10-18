@@ -3,7 +3,7 @@
 All what concerns User Interface needs an access to the static files.
     For that a symlink has to be created in folder ``/var/log/dustbusters`` pointing to the development folder::
     
-        sudo ln -s /opt/venvpy/dustbusters-env/dustbusters/src/dustbusters/server/dustbusters/static
+        sudo ln -s /opt/venvpy/dustbusters-env/dustbusters/src/dustbusters/server/pages/static
         
 """
 
@@ -11,6 +11,7 @@ import tornado.httpserver
 import tornado.web
 import logging
 from dustbusters.config import TORNADO_PORT
+from dustbusters.server.pages.main import DialogZZZ, DialogHome
 
 __author__ = "dustbusters"
 __email__ = "openjph@gmail.com"
@@ -43,16 +44,24 @@ HELLO_MSG = """
 ## HANDLERS ########################################################
 
 class MainHandler(tornado.web.RequestHandler):
-    """ 
-    Display all applications available at this address 
-    """
-    def get(self):
-        """
-        init function for a Tornado application.
-        It will prepare arguments and launch the application.
-        """
-        self.write(HELLO_MSG)
-        return       
+#     """ 
+#     Display all applications available at this address 
+#     """
+#     def get(self):
+#         """
+#         init function for a Tornado application.
+#         It will prepare arguments and launch the application.
+#         """
+#         self.write(HELLO_MSG)
+#         return
+    
+    def get(self, *args):
+                                   
+        polluant = self.get_argument("polluant", default='100')
+        title = u'IS THE AIR CLEAN TODAY?'
+        mydialog = DialogHome(title=title,polluant=polluant)
+        self.write(mydialog.page)
+        return 
      
 
  # SERVER ##########################################################################

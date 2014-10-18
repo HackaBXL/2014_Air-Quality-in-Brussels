@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+#myheader{
+	display:flex;
+	padding:20px;
+	border-bottom:solid;
+}
+#title{
+	width:75%;
+	font-weight: 400;
+}
+#cont-ind{
+	width:25%;
+}
+#indicator{
+	width: 80px;
+	height: 80px;
+	background-color: #00FF00;
+}
+#cont-cont{
+	display:flex;
+	padding: 20px;
+}
+#cont-map {
+	width: 75%;
+	text-align:center;
+}
+#map {
+	width: 800px;
+	height: 600px;
+}
+#cont-legend{
+	width:25%;
+	padding: 20px;
+}
+#myfooter{
+	text-align:center;
+	padding:20px;
+}
+h1{text-align:center;}
+
+body {
+	font: 16px/1.4 Ubuntu, Arial, sans-serif;
+}
+
+.ghbtns {
+	position: relative;
+	top: 4px;
+	margin-left: 5px;
+}
+
+a {
+	color: #0077ff;
+}

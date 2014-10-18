@@ -12,15 +12,17 @@ __license__ = "GPLv3"
 __date__ = "2014-10-17"
 __version__ = "1.0"
 __status__ = "Development"
-
    
         
 class TestHeatMap(unittest.TestCase):
     
-    def test_generate_points(self):
+    def test_generate_points_per_polluant(self):
+        
+        polluants = ['C6H6','CO','NO2','O3','PM2.5','PM10','SO2']
         ctrl = HeatMap()
-        result = ctrl.generate_points()
-        print result
+        for item in polluants:
+            result = ctrl.generate_points_per_polluant(item)
+            print result
  
         return   
     

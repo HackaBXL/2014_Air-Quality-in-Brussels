@@ -10,3 +10,5 @@ MARIADB_SCHEMA = 'dustbusters_01'
 ''' Tornado settings '''
 TORNADO_PORT = 9696
 TORNADO_LOG = '/var/log/dustbusters'
+
+DATA_LOG = '/var/log/dustbusters/data'
